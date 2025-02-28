@@ -7,27 +7,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int max = 50;
-        int min = 1;
-        int adivinar;
+        double peso;
+        double estatura;
 
-        Random ale = new Random();
-        adivinar = ale.nextInt((max - min +1))+min;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Ingrese su peso en Kg: ");
+        peso= teclado.nextDouble();
 
+        System.out.println("Ingrese su estatura en cm: ");
+        estatura= teclado.nextDouble();
+        double imc= (peso/(estatura*estatura));
 
-        for (int i= 1; i<=3; i++) {
-            Scanner teclado = new Scanner(System.in);
-            System.out.println("Ingrese el numero: ");
-            int usuario = teclado.nextInt();
-
-            if (usuario == adivinar) {
-                System.out.println("Usted a adivinado el número");
-            } else if (usuario > adivinar) {
-                System.out.println("El número es menor");
-            } else if (usuario < adivinar) {
-                System.out.println("El número es mayor");
-            }
+        if (imc<= 18.5){
+            System.out.println("Tiene bajo peso");
+        } else if (imc >= 18.6 && imc <= 24.9) {
+            System.out.println("Tiene un peso normal");
+        } else if (imc >= 25 && imc <= 26.9) {
+            System.out.println("Tiene sobrepeso grado 1");
+        } else if (imc >= 27 && imc <= 29.9) {
+            System.out.println("Tiene sobrepeso grado 2");
+        } else if (imc >= 30 && imc <= 34.9) {
+            System.out.println("Tiene obesidad grado 1");
+        } else if (imc >= 35 && imc <= 39.9) {
+            System.out.println("Tiene obesidad grado 2");
+        } else if (imc >= 40 && imc <= 49.9) {
+            System.out.println("Tiene obesidad grado 3");
+        } else if (imc >= 50) {
+            System.out.println("Tiene obesidad grado 4");
         }
-        System.out.println("El numero era "+ adivinar);
     }
 }
