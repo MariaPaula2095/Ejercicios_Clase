@@ -7,33 +7,66 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        double peso;
-        double estatura;
+        double dinero;
+        int numero;
+        int max= 3;
+        int min= 1;
+        boolean estado= true;
+
+
+        Random ale = new Random();
 
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Ingrese su peso en Kg: ");
-        peso= teclado.nextDouble();
+        System.out.println("Ingrese su cantidad de dinero: ");
+        dinero= teclado.nextDouble();
 
-        System.out.println("Ingrese su estatura en cm: ");
-        estatura= teclado.nextDouble();
-        double imc= (peso/(estatura*estatura));
+        numero = ale.nextInt((max - min +1)) + min;
+        System.out.println("Su número es: " + numero);
 
-        if (imc<= 18.5){
-            System.out.println("Tiene bajo peso");
-        } else if (imc >= 18.6 && imc <= 24.9) {
-            System.out.println("Tiene un peso normal");
-        } else if (imc >= 25 && imc <= 26.9) {
-            System.out.println("Tiene sobrepeso grado 1");
-        } else if (imc >= 27 && imc <= 29.9) {
-            System.out.println("Tiene sobrepeso grado 2");
-        } else if (imc >= 30 && imc <= 34.9) {
-            System.out.println("Tiene obesidad grado 1");
-        } else if (imc >= 35 && imc <= 39.9) {
-            System.out.println("Tiene obesidad grado 2");
-        } else if (imc >= 40 && imc <= 49.9) {
-            System.out.println("Tiene obesidad grado 3");
-        } else if (imc >= 50) {
-            System.out.println("Tiene obesidad grado 4");
+        double saldo1;
+        double saldo2;
+        double saldo3;
+
+        int opcion;
+
+do  {
+
+
+    if (numero == 3) {
+        saldo1=(dinero-dinero);
+        System.out.println("Usted ha perdido todo su dinero. Saldo= " + saldo1);
+        estado=false;
+    } else if (numero == 2) {
+        saldo2=(dinero/2);
+        System.out.println("Usted ha perdido la mitad de su dinero. Saldo= " + saldo2);
+        System.out.println("Desea seguir jugando? 1= Sí / 2= No");
+        opcion = teclado.nextInt();
+
+        if (opcion == 1){
+
+            numero = ale.nextInt((max - min +1)) + min;
+            System.out.println("Su número es: " + numero);
+        }else if (opcion==2){
+
+            estado=false;
+            System.out.println("Gracias por participar. Su saldo es: " + dinero);
+        }
+
+    } else if (numero == 1) {
+        saldo3=(dinero*dinero);
+        System.out.println("Usted ha duplicado su dinero. Saldo= " + saldo3);
+        System.out.println("Desea seguir jugando? 1= Sí / 2= No");
+        opcion = teclado.nextInt();
+
+        if (opcion == 1){
+            numero = ale.nextInt((max - min +1)) + min;
+            System.out.println("Su número es: " + numero);
+        }else if (opcion==2){
+            System.out.println("Gracias por participar. Su saldo es: " + dinero);
+            break;
         }
     }
+}while (estado);
+    }
+
 }
