@@ -23,9 +23,8 @@ public class Main {
         numero = ale.nextInt((max - min +1)) + min;
         System.out.println("Su número es: " + numero);
 
-        double saldo1;
-        double saldo2;
-        double saldo3;
+
+
 
         int opcion;
 
@@ -33,34 +32,34 @@ do  {
 
 
     if (numero == 3) {
-        saldo1=(dinero-dinero);
-        System.out.println("Usted ha perdido todo su dinero. Saldo= " + saldo1);
+        dinero=(dinero-dinero);
+        System.out.println("Usted ha perdido todo su dinero. Saldo= " + dinero);
         estado=false;
     } else if (numero == 2) {
-        saldo2=(dinero/2);
-        System.out.println("Usted ha perdido la mitad de su dinero. Saldo= " + saldo2);
+        dinero=(dinero/2);
+        System.out.println("Usted ha perdido la mitad de su dinero. Saldo= " + dinero);
         System.out.println("Desea seguir jugando? 1= Sí / 2= No");
         opcion = teclado.nextInt();
 
         if (opcion == 1){
-
             numero = ale.nextInt((max - min +1)) + min;
             System.out.println("Su número es: " + numero);
-        }else if (opcion==2){
 
+        }else if (opcion==2){
             estado=false;
             System.out.println("Gracias por participar. Su saldo es: " + dinero);
         }
 
     } else if (numero == 1) {
-        saldo3=(dinero*dinero);
-        System.out.println("Usted ha duplicado su dinero. Saldo= " + saldo3);
+        dinero=(dinero*2);
+        System.out.println("Usted ha duplicado su dinero. Saldo= " + dinero);
         System.out.println("Desea seguir jugando? 1= Sí / 2= No");
         opcion = teclado.nextInt();
 
         if (opcion == 1){
             numero = ale.nextInt((max - min +1)) + min;
             System.out.println("Su número es: " + numero);
+
         }else if (opcion==2){
             System.out.println("Gracias por participar. Su saldo es: " + dinero);
             break;
