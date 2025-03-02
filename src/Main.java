@@ -7,20 +7,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        double numero1;//Numeros para operar
-        double numero2;
+        double numero1, numero2, operacion;//Numeros para operar
         int opcion;
         boolean estado=true;
         String signo; //Operando a usar
-        double operacion;
+
 
 
         Random ale = new Random();
         Scanner teclado = new Scanner(System.in);
+        System.out.println("**********BIENVENIDO A NUESTRA CALCULADORA************");
 
 
 do {
-    System.out.println("**********BIENVENIDO A NUESTRA CALCULADORA************");
     numero1=ale.nextInt((100 - 1 +1)) + 1;  //Numeros aleatorios
     numero2=ale.nextInt((100 - 1 +1)) + 1;
     System.out.println("Los numeros son: " + numero1 + " y "+numero2);
