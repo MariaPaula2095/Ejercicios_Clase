@@ -7,65 +7,106 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        double dinero;
-        int numero;
-        int max= 3;
-        int min= 1;
-        boolean estado= true;
+        double numero1;//Numeros para operar
+        double numero2;
+        int opcion;
+        boolean estado=true;
+        String signo; //Operando a usar
+        double operacion;
 
 
         Random ale = new Random();
-
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Ingrese su cantidad de dinero: ");
-        dinero= teclado.nextDouble();
-
-        numero = ale.nextInt((max - min +1)) + min;
-        System.out.println("Su número es: " + numero);
 
 
+do {
+    System.out.println("**********BIENVENIDO A NUESTRA CALCULADORA************");
+    numero1=ale.nextInt((100 - 1 +1)) + 1;  //Numeros aleatorios
+    numero2=ale.nextInt((100 - 1 +1)) + 1;
+    System.out.println("Los numeros son: " + numero1 + " y "+numero2);
+    System.out.println("Digite la operecion que quiere hacer con los numeros: " +
+            "(+),(-),(*),(/),(^),(%)");
+    signo=teclado.next();
 
+    if (signo.equals("+")) {
+        operacion = (numero1 + numero2);
+        System.out.println("El resultado de la suma es: " + operacion);
+        System.out.println("¿Desea seguir haciendo operaciones?  1= Si  / 2= No");
+        opcion= teclado.nextInt();
 
-        int opcion;
-
-do  {
-
-
-    if (numero == 3) {
-        dinero=(dinero-dinero);
-        System.out.println("Usted ha perdido todo su dinero. Saldo= " + dinero);
-        estado=false;
-    } else if (numero == 2) {
-        dinero=(dinero/2);
-        System.out.println("Usted ha perdido la mitad de su dinero. Saldo= " + dinero);
-        System.out.println("Desea seguir jugando? 1= Sí / 2= No");
-        opcion = teclado.nextInt();
-
-        if (opcion == 1){
-            numero = ale.nextInt((max - min +1)) + min;
-            System.out.println("Su número es: " + numero);
-
-        }else if (opcion==2){
+        if (opcion==1){
+            continue;
+        } else if (opcion==2) {
             estado=false;
-            System.out.println("Gracias por participar. Su saldo es: " + dinero);
+            System.out.println("Gracias por usar nuestra calculadora");
         }
 
-    } else if (numero == 1) {
-        dinero=(dinero*2);
-        System.out.println("Usted ha duplicado su dinero. Saldo= " + dinero);
-        System.out.println("Desea seguir jugando? 1= Sí / 2= No");
-        opcion = teclado.nextInt();
+    } else if (signo.equals("-")) {
+        operacion = (numero1 - numero2);
+        System.out.println("El resultado de la resta es: " + operacion);
+        System.out.println("¿Desea seguir haciendo operaciones?  1= Si  / 2= No");
+        opcion= teclado.nextInt();
 
-        if (opcion == 1){
-            numero = ale.nextInt((max - min +1)) + min;
-            System.out.println("Su número es: " + numero);
+        if (opcion==1){
+            continue;
+        } else if (opcion==2) {
+            estado=false;
+            System.out.println("Gracias por usar nuestra calculadora");
+        }
 
-        }else if (opcion==2){
-            System.out.println("Gracias por participar. Su saldo es: " + dinero);
-            break;
+    } else if (signo.equals("*")) {
+        operacion = (numero1 * numero2);
+        System.out.println("El resultado de la multiplicacion es: " + operacion);
+        System.out.println("¿Desea seguir haciendo operaciones?  1= Si  / 2= No");
+        opcion= teclado.nextInt();
+
+        if (opcion==1){
+            continue;
+        } else if (opcion==2) {
+            estado=false;
+            System.out.println("Gracias por usar nuestra calculadora");
+        }
+
+    } else if (signo.equals("/")) {
+        operacion = (numero1 / numero2);
+        System.out.println("El resultado de la division es: " + operacion);
+        System.out.println("¿Desea seguir haciendo operaciones?  1= Si  / 2= No");
+        opcion= teclado.nextInt();
+
+        if (opcion==1){
+            continue;
+        } else if (opcion==2) {
+            estado=false;
+            System.out.println("Gracias por usar nuestra calculadora");
+        }
+
+    } else if (signo.equals("^")) {
+        operacion = Math.pow(numero1, numero2);
+        System.out.println("El resultado de la potencia es: " + operacion);
+        System.out.println("¿Desea seguir haciendo operaciones?  1= Si  / 2= No");
+        opcion= teclado.nextInt();
+        if (opcion==1){
+            continue;
+        } else if (opcion==2) {
+            estado=false;
+            System.out.println("Gracias por usar nuestra calculadora");
+        }
+
+    } else if (signo.equals("%")) {
+        operacion = (numero1 % numero2);
+        System.out.println("El resultado del modulo es: " + operacion);
+        System.out.println("¿Desea seguir haciendo operaciones?  1= Si  / 2= No");
+        opcion= teclado.nextInt();
+
+        if (opcion==1){
+            continue;
+        } else if (opcion==2) {
+            estado=false;
+            System.out.println("Gracias por usar nuestra calculadora");
         }
     }
 }while (estado);
+
     }
 
 }
