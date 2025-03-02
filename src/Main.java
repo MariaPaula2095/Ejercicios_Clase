@@ -14,18 +14,20 @@ public class Main {
 
 
 
-        Random ale = new Random();
+
         Scanner teclado = new Scanner(System.in);
         System.out.println("**********BIENVENIDO A NUESTRA CALCULADORA************");
 
 
 do {
-    numero1=ale.nextInt((100 - 1 +1)) + 1;  //Numeros aleatorios
-    numero2=ale.nextInt((100 - 1 +1)) + 1;
-    System.out.println("Los numeros son: " + numero1 + " y "+numero2);
+    System.out.println("Ingrese el primer numero de 1 a 100: ");
+    numero1= teclado.nextDouble();
+    System.out.println("Ingrese el segundo numero de 1 a 100: ");
+    numero2= teclado.nextDouble();
     System.out.println("Digite la operecion que quiere hacer con los numeros: " +
             "(+),(-),(*),(/),(^),(%)");
     signo=teclado.next();
+
 
     if (signo.equals("+")) {
         operacion = (numero1 + numero2);
